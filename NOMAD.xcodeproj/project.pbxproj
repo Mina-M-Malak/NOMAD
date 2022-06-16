@@ -3,29 +3,59 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3705032A77455CE4B37CFF83 /* Pods_NOMAD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93068725C858EB1C1381C1DF /* Pods_NOMAD.framework */; };
+		A23788E8285BE74200B06F7A /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23788E7285BE74200B06F7A /* ProductListViewModel.swift */; };
+		A23788EB285BE96900B06F7A /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23788EA285BE96900B06F7A /* UIViewController+Extensions.swift */; };
+		A23788EE285BEA6600B06F7A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23788ED285BEA6600B06F7A /* UIView+Extensions.swift */; };
 		A2962786285BB3E6009014E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962785285BB3E6009014E5 /* AppDelegate.swift */; };
 		A2962788285BB3E6009014E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962787285BB3E6009014E5 /* SceneDelegate.swift */; };
-		A296278A285BB3E6009014E5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962789285BB3E6009014E5 /* ViewController.swift */; };
+		A296278A285BB3E6009014E5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962789285BB3E6009014E5 /* BaseViewController.swift */; };
 		A296278D285BB3E6009014E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A296278B285BB3E6009014E5 /* Main.storyboard */; };
 		A2962790285BB3E6009014E5 /* NOMAD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A296278E285BB3E6009014E5 /* NOMAD.xcdatamodeld */; };
 		A2962792285BB3E8009014E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2962791285BB3E8009014E5 /* Assets.xcassets */; };
 		A2962795285BB3E8009014E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2962793285BB3E8009014E5 /* LaunchScreen.storyboard */; };
+		A29627B2285BCDD0009014E5 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29627B1285BCDD0009014E5 /* APIError.swift */; };
+		A29627B5285BCDF0009014E5 /* APIRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29627B4285BCDF0009014E5 /* APIRoute.swift */; };
+		A29627B8285BCE10009014E5 /* NOMAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29627B7285BCE10009014E5 /* NOMAD.swift */; };
+		A29627BB285BCE3A009014E5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29627BA285BCE3A009014E5 /* Endpoint.swift */; };
+		A29627BE285BCE5D009014E5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29627BD285BCE5D009014E5 /* Result.swift */; };
+		A29627CC285BD22F009014E5 /* ProductListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29627CB285BD22F009014E5 /* ProductListViewController.swift */; };
+		A29627CF285BD2FE009014E5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29627CE285BD2FE009014E5 /* Product.swift */; };
+		A29627D3285BDC36009014E5 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29627D1285BDC36009014E5 /* ProductTableViewCell.swift */; };
+		A29627D4285BDC36009014E5 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29627D2285BDC36009014E5 /* ProductTableViewCell.xib */; };
+		A29627D7285BDF7A009014E5 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29627D6285BDF7A009014E5 /* UITableView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D4A49712653E2ECD2C49804 /* Pods-NOMAD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOMAD.release.xcconfig"; path = "Target Support Files/Pods-NOMAD/Pods-NOMAD.release.xcconfig"; sourceTree = "<group>"; };
+		59C1B20E9B1D189E74CD51B5 /* Pods-NOMAD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NOMAD.debug.xcconfig"; path = "Target Support Files/Pods-NOMAD/Pods-NOMAD.debug.xcconfig"; sourceTree = "<group>"; };
+		93068725C858EB1C1381C1DF /* Pods_NOMAD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NOMAD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A23788E7285BE74200B06F7A /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
+		A23788EA285BE96900B06F7A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		A23788ED285BEA6600B06F7A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		A2962782285BB3E6009014E5 /* NOMAD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOMAD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2962785285BB3E6009014E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2962787285BB3E6009014E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A2962789285BB3E6009014E5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A2962789285BB3E6009014E5 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A296278C285BB3E6009014E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A296278F285BB3E6009014E5 /* NOMAD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NOMAD.xcdatamodel; sourceTree = "<group>"; };
 		A2962791285BB3E8009014E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2962794285BB3E8009014E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2962796285BB3E8009014E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A29627B1285BCDD0009014E5 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		A29627B4285BCDF0009014E5 /* APIRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoute.swift; sourceTree = "<group>"; };
+		A29627B7285BCE10009014E5 /* NOMAD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NOMAD.swift; sourceTree = "<group>"; };
+		A29627BA285BCE3A009014E5 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		A29627BD285BCE5D009014E5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		A29627CB285BD22F009014E5 /* ProductListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewController.swift; sourceTree = "<group>"; };
+		A29627CE285BD2FE009014E5 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		A29627D1285BDC36009014E5 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		A29627D2285BDC36009014E5 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
+		A29627D6285BDF7A009014E5 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +63,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3705032A77455CE4B37CFF83 /* Pods_NOMAD.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0342515AF0C2FDE899B46F39 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93068725C858EB1C1381C1DF /* Pods_NOMAD.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		998A0B7566614728FFFED84A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59C1B20E9B1D189E74CD51B5 /* Pods-NOMAD.debug.xcconfig */,
+				2D4A49712653E2ECD2C49804 /* Pods-NOMAD.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		A2962779285BB3E6009014E5 = {
 			isa = PBXGroup;
 			children = (
 				A2962784285BB3E6009014E5 /* NOMAD */,
 				A2962783285BB3E6009014E5 /* Products */,
+				998A0B7566614728FFFED84A /* Pods */,
+				0342515AF0C2FDE899B46F39 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +108,133 @@
 		A2962784285BB3E6009014E5 /* NOMAD */ = {
 			isa = PBXGroup;
 			children = (
-				A2962785285BB3E6009014E5 /* AppDelegate.swift */,
-				A2962787285BB3E6009014E5 /* SceneDelegate.swift */,
-				A2962789285BB3E6009014E5 /* ViewController.swift */,
-				A296278B285BB3E6009014E5 /* Main.storyboard */,
-				A2962791285BB3E8009014E5 /* Assets.xcassets */,
-				A2962793285BB3E8009014E5 /* LaunchScreen.storyboard */,
+				A29627A0285BCAA2009014E5 /* App Delegate */,
+				A29627AF285BCD7F009014E5 /* CoreData */,
+				A29627AC285BCD3B009014E5 /* Extensions */,
+				A29627AE285BCD59009014E5 /* Network */,
+				A29627AB285BCD20009014E5 /* Base */,
+				A29627A4285BCB92009014E5 /* Storyboard */,
+				A29627AD285BCD4D009014E5 /* Scenes */,
+				A29627A6285BCBA6009014E5 /* Assets */,
 				A2962796285BB3E8009014E5 /* Info.plist */,
-				A296278E285BB3E6009014E5 /* NOMAD.xcdatamodeld */,
 			);
 			path = NOMAD;
+			sourceTree = "<group>";
+		};
+		A29627A0285BCAA2009014E5 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				A2962785285BB3E6009014E5 /* AppDelegate.swift */,
+				A2962787285BB3E6009014E5 /* SceneDelegate.swift */,
+			);
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		A29627A4285BCB92009014E5 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				A296278B285BB3E6009014E5 /* Main.storyboard */,
+				A2962793285BB3E8009014E5 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		A29627A6285BCBA6009014E5 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A2962791285BB3E8009014E5 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		A29627AB285BCD20009014E5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				A2962789285BB3E6009014E5 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		A29627AC285BCD3B009014E5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A29627D6285BDF7A009014E5 /* UITableView+Extensions.swift */,
+				A23788EA285BE96900B06F7A /* UIViewController+Extensions.swift */,
+				A23788ED285BEA6600B06F7A /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A29627AD285BCD4D009014E5 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				A29627C3285BD0E5009014E5 /* Product List */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		A29627AE285BCD59009014E5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A29627B1285BCDD0009014E5 /* APIError.swift */,
+				A29627B4285BCDF0009014E5 /* APIRoute.swift */,
+				A29627B7285BCE10009014E5 /* NOMAD.swift */,
+				A29627BA285BCE3A009014E5 /* Endpoint.swift */,
+				A29627BD285BCE5D009014E5 /* Result.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		A29627AF285BCD7F009014E5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				A296278E285BB3E6009014E5 /* NOMAD.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		A29627C3285BD0E5009014E5 /* Product List */ = {
+			isa = PBXGroup;
+			children = (
+				A29627C7285BD1FA009014E5 /* Model */,
+				A29627C6285BD1F4009014E5 /* View */,
+				A29627C8285BD1FF009014E5 /* ViewModel */,
+				A29627C9285BD20F009014E5 /* Controller */,
+			);
+			path = "Product List";
+			sourceTree = "<group>";
+		};
+		A29627C6285BD1F4009014E5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A29627D1285BDC36009014E5 /* ProductTableViewCell.swift */,
+				A29627D2285BDC36009014E5 /* ProductTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A29627C7285BD1FA009014E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A29627CE285BD2FE009014E5 /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A29627C8285BD1FF009014E5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A23788E7285BE74200B06F7A /* ProductListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A29627C9285BD20F009014E5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A29627CB285BD22F009014E5 /* ProductListViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +244,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2962799285BB3E8009014E5 /* Build configuration list for PBXNativeTarget "NOMAD" */;
 			buildPhases = (
+				389F3001DEFAA1DAB9408864 /* [CP] Check Pods Manifest.lock */,
 				A296277E285BB3E6009014E5 /* Sources */,
 				A296277F285BB3E6009014E5 /* Frameworks */,
 				A2962780285BB3E6009014E5 /* Resources */,
+				CA49D0F6052171E0D22F9F56 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -128,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2962795285BB3E8009014E5 /* LaunchScreen.storyboard in Resources */,
+				A29627D4285BDC36009014E5 /* ProductTableViewCell.xib in Resources */,
 				A2962792285BB3E8009014E5 /* Assets.xcassets in Resources */,
 				A296278D285BB3E6009014E5 /* Main.storyboard in Resources */,
 			);
@@ -135,15 +305,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		389F3001DEFAA1DAB9408864 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NOMAD-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA49D0F6052171E0D22F9F56 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NOMAD/Pods-NOMAD-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NOMAD/Pods-NOMAD-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NOMAD/Pods-NOMAD-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A296277E285BB3E6009014E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A296278A285BB3E6009014E5 /* ViewController.swift in Sources */,
+				A29627BE285BCE5D009014E5 /* Result.swift in Sources */,
+				A296278A285BB3E6009014E5 /* BaseViewController.swift in Sources */,
+				A29627CC285BD22F009014E5 /* ProductListViewController.swift in Sources */,
 				A2962790285BB3E6009014E5 /* NOMAD.xcdatamodeld in Sources */,
+				A29627BB285BCE3A009014E5 /* Endpoint.swift in Sources */,
+				A29627D3285BDC36009014E5 /* ProductTableViewCell.swift in Sources */,
+				A23788EE285BEA6600B06F7A /* UIView+Extensions.swift in Sources */,
+				A29627CF285BD2FE009014E5 /* Product.swift in Sources */,
+				A23788EB285BE96900B06F7A /* UIViewController+Extensions.swift in Sources */,
 				A2962786285BB3E6009014E5 /* AppDelegate.swift in Sources */,
+				A29627D7285BDF7A009014E5 /* UITableView+Extensions.swift in Sources */,
+				A29627B2285BCDD0009014E5 /* APIError.swift in Sources */,
+				A23788E8285BE74200B06F7A /* ProductListViewModel.swift in Sources */,
+				A29627B5285BCDF0009014E5 /* APIRoute.swift in Sources */,
 				A2962788285BB3E6009014E5 /* SceneDelegate.swift in Sources */,
+				A29627B8285BCE10009014E5 /* NOMAD.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,37 +511,45 @@
 		};
 		A296279A285BB3E8009014E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59C1B20E9B1D189E74CD51B5 /* Pods-NOMAD.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TVF44C8U64;
 				INFOPLIST_FILE = NOMAD/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NOMAD.NOMAD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		A296279B285BB3E8009014E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D4A49712653E2ECD2C49804 /* Pods-NOMAD.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TVF44C8U64;
 				INFOPLIST_FILE = NOMAD/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NOMAD.NOMAD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
