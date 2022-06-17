@@ -27,11 +27,12 @@ class ProductListViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addSubscribers()
         viewModel.fetchData()
     }
     
     //Setup View UI
-    private func setupUI(){
+    override func setupUI(){
         title = "Product List"
         productListTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: productListTableView.frame.size.width, height: 1))
         productListTableView.refreshControl  = refreshControl
@@ -40,7 +41,7 @@ class ProductListViewController: BaseViewController {
     }
     
     //Register TableView Cell
-    private func registerCells() {
+    override func registerCells() {
         productListTableView.register(nib: ProductTableViewCell.self)
     }
     
@@ -103,6 +104,10 @@ extension ProductListViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cell: ProductTableViewCell.self, for: indexPath)
         cell.setData(product: products[indexPath.row])
+        cell.didAddToCartPressed = { [weak self] in
+            guard let strongSelf = self else { return }
+            strongSelf.viewModel.addProductToCart(product: strongSelf.products[indexPath.row])
+        }
         return cell
     }
 }

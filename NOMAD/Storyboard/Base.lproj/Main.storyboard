@@ -37,12 +37,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FpV-sr-hZu">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="w5D-ff-Y3K">
-                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="searchAction:" destination="BYZ-38-t0r" id="l6j-Km-ZC8"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="backBarButtonItem" title=" " id="qHo-G5-QVJ"/>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="search" id="w5D-ff-Y3K">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="searchAction:" destination="BYZ-38-t0r" id="l6j-Km-ZC8"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="cart" catalog="system" id="XQM-hH-vg7">
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <segue destination="w9n-Rc-8M0" kind="show" id="Fxk-wb-QqR"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="productListTableView" destination="qcw-Zb-ft9" id="ec5-A7-gNX"/>
@@ -52,6 +61,42 @@
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="64.955357142857139"/>
         </scene>
+        <!--Cart View Controller-->
+        <scene sceneID="u2r-Ys-das">
+            <objects>
+                <viewController id="w9n-Rc-8M0" customClass="CartViewController" customModule="NOMAD" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mxO-WR-b1a">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cSZ-4S-C6K">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="w9n-Rc-8M0" id="NHe-UZ-ExB"/>
+                                    <outlet property="delegate" destination="w9n-Rc-8M0" id="e1r-Wk-Ywv"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cU9-7T-eYa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cSZ-4S-C6K" firstAttribute="top" secondItem="cU9-7T-eYa" secondAttribute="top" id="84O-f1-XGP"/>
+                            <constraint firstItem="cSZ-4S-C6K" firstAttribute="leading" secondItem="cU9-7T-eYa" secondAttribute="leading" id="ZPy-w1-m5y"/>
+                            <constraint firstItem="cU9-7T-eYa" firstAttribute="trailing" secondItem="cSZ-4S-C6K" secondAttribute="trailing" id="fFB-xW-mfj"/>
+                            <constraint firstAttribute="bottom" secondItem="cSZ-4S-C6K" secondAttribute="bottom" id="hHU-gg-VJ8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="2Ts-eL-F99"/>
+                    <connections>
+                        <outlet property="cartTableView" destination="cSZ-4S-C6K" id="aV6-tZ-6ed"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v5R-gQ-w24" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1986.9565217391305" y="64.955357142857139"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="v5s-kV-4lD">
             <objects>
@@ -60,6 +105,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mqR-bB-5my">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -73,6 +119,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="cart" catalog="system" width="128" height="102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

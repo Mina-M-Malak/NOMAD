@@ -11,6 +11,9 @@
 		A23788E8285BE74200B06F7A /* ProductListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23788E7285BE74200B06F7A /* ProductListViewModel.swift */; };
 		A23788EB285BE96900B06F7A /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23788EA285BE96900B06F7A /* UIViewController+Extensions.swift */; };
 		A23788EE285BEA6600B06F7A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23788ED285BEA6600B06F7A /* UIView+Extensions.swift */; };
+		A23788F6285BF15500B06F7A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23788F5285BF15500B06F7A /* CoreDataManager.swift */; };
+		A2378904285BFC1C00B06F7A /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2378903285BFC1C00B06F7A /* CartViewController.swift */; };
+		A2378909285BFE4400B06F7A /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2378908285BFE4400B06F7A /* CartViewModel.swift */; };
 		A2962786285BB3E6009014E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962785285BB3E6009014E5 /* AppDelegate.swift */; };
 		A2962788285BB3E6009014E5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962787285BB3E6009014E5 /* SceneDelegate.swift */; };
 		A296278A285BB3E6009014E5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2962789285BB3E6009014E5 /* BaseViewController.swift */; };
@@ -37,6 +40,9 @@
 		A23788E7285BE74200B06F7A /* ProductListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewModel.swift; sourceTree = "<group>"; };
 		A23788EA285BE96900B06F7A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		A23788ED285BEA6600B06F7A /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		A23788F5285BF15500B06F7A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		A2378903285BFC1C00B06F7A /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		A2378908285BFE4400B06F7A /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		A2962782285BB3E6009014E5 /* NOMAD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOMAD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2962785285BB3E6009014E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2962787285BB3E6009014E5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +91,31 @@
 				2D4A49712653E2ECD2C49804 /* Pods-NOMAD.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		A2378901285BFBF800B06F7A /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				A2378907285BFE3400B06F7A /* ViewModel */,
+				A2378902285BFC0300B06F7A /* Controller */,
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		A2378902285BFC0300B06F7A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A2378903285BFC1C00B06F7A /* CartViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A2378907285BFE3400B06F7A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A2378908285BFE4400B06F7A /* CartViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		A2962779285BB3E6009014E5 = {
@@ -169,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				A29627C3285BD0E5009014E5 /* Product List */,
+				A2378901285BFBF800B06F7A /* Cart */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -188,6 +220,7 @@
 		A29627AF285BCD7F009014E5 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				A23788F5285BF15500B06F7A /* CoreDataManager.swift */,
 				A296278E285BB3E6009014E5 /* NOMAD.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -355,7 +388,9 @@
 				A29627BE285BCE5D009014E5 /* Result.swift in Sources */,
 				A296278A285BB3E6009014E5 /* BaseViewController.swift in Sources */,
 				A29627CC285BD22F009014E5 /* ProductListViewController.swift in Sources */,
+				A2378909285BFE4400B06F7A /* CartViewModel.swift in Sources */,
 				A2962790285BB3E6009014E5 /* NOMAD.xcdatamodeld in Sources */,
+				A23788F6285BF15500B06F7A /* CoreDataManager.swift in Sources */,
 				A29627BB285BCE3A009014E5 /* Endpoint.swift in Sources */,
 				A29627D3285BDC36009014E5 /* ProductTableViewCell.swift in Sources */,
 				A23788EE285BEA6600B06F7A /* UIView+Extensions.swift in Sources */,
@@ -367,6 +402,7 @@
 				A23788E8285BE74200B06F7A /* ProductListViewModel.swift in Sources */,
 				A29627B5285BCDF0009014E5 /* APIRoute.swift in Sources */,
 				A2962788285BB3E6009014E5 /* SceneDelegate.swift in Sources */,
+				A2378904285BFC1C00B06F7A /* CartViewController.swift in Sources */,
 				A29627B8285BCE10009014E5 /* NOMAD.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,8 +551,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TVF44C8U64;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = NOMAD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -526,6 +562,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NOMAD.NOMAD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -537,8 +574,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TVF44C8U64;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = NOMAD/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -548,6 +585,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.NOMAD.NOMAD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

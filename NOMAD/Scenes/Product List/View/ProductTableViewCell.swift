@@ -15,6 +15,9 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var productDescriptionLabel: UILabel!
     @IBOutlet weak var productPriceLabel: UILabel!
     @IBOutlet weak var addToCartButton: UIButton!
+    @IBOutlet weak var quantityLabel: UILabel!
+    
+    var didAddToCartPressed: (() ->())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,12 +29,20 @@ class ProductTableViewCell: UITableViewCell {
         addToCartButton.makeRoundedCornersWith(radius: 8.0)
     }
     
-    func setData(product: Product){
+    func setData(product: Product,isQuantityLabelHidden: Bool = true,isAddtoCartButtonHidden: Bool = false){
+        quantityLabel.isHidden = isQuantityLabelHidden
+        addToCartButton.isHidden = isAddtoCartButtonHidden
+        
         productNameLabel.text = product.name
         productDescriptionLabel.text = product.description
-        productPriceLabel.text = "\(product.retailPrice)" + " EGP"
+        quantityLabel.text = "\(product.quantity ?? 1)" + " " + "pieces"
+        productPriceLabel.text = "\(product.retailPrice * Double(product.quantity ?? 1))" + " EGP"
         if let url = URL(string: product.image){
             productImageView.kf.setImage(with: url,placeholder: UIImage(named: "logo"))
         }
+    }
+    
+    @IBAction func addtoCartAction(_ sender: UIButton) {
+        didAddToCartPressed?()
     }
 }

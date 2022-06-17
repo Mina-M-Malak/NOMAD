@@ -40,4 +40,8 @@ class ProductListViewModel{
         let customProducts = products.filter({$0.name.lowercased().contains(searchText.lowercased()) || $0.description.lowercased().contains(searchText.lowercased())})
         result?(.success(customProducts))
     }
+    
+    func addProductToCart(product: Product){
+        CoreDataManager.shared.addProductToCart(product: product)
+    }
 }

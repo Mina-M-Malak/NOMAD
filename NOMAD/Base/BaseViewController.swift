@@ -12,6 +12,13 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
+        registerCells()
     }
+    
+    //Setup View UI
+    func setupUI(){}
+    
+    func registerCells(){}
 }
 
