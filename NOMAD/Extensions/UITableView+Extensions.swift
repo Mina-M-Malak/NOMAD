@@ -58,12 +58,13 @@ extension UITableView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         messageLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.textColor = UIColor.black
+        let theme = ThemeManager.shared.currentTheme
+        titleLabel.textColor = theme.primaryColor
         titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        messageLabel.textColor = UIColor.lightGray
+        messageLabel.textColor = UIColor.secondaryLabel
         messageLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         imageView.image = image?.withRenderingMode(.alwaysTemplate)
-        imageView.tintColor = .black
+        imageView.tintColor = theme.navigationBarTint
         imageView.contentMode = .scaleAspectFit
         emptyView.addSubview(titleLabel)
         emptyView.addSubview(messageLabel)

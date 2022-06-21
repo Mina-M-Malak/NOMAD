@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Combine
 
 class ProductListViewController: BaseViewController {
     
     @IBOutlet weak var productListTableView: UITableView!
+    
+    private var observers: [AnyCancellable] = []
     
     private var refreshControl = UIRefreshControl()
     private var viewModel = ProductListViewModel()
@@ -33,11 +36,21 @@ class ProductListViewController: BaseViewController {
     
     //Setup View UI
     override func setupUI(){
+        super.setupUI()
+        
         title = "Product List"
         productListTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: productListTableView.frame.size.width, height: 1))
         productListTableView.refreshControl  = refreshControl
         refreshControl.addTarget(self, action: #selector(handleRefresher), for: .valueChanged)
         productListTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
+    }
+    
+    //setup colors
+    override func setupViewColors(theme: Theme) {
+        super.setupViewColors(theme: theme)
+        view.backgroundColor = theme.background
+        productListTableView.separatorColor = theme.primaryColor
+        productListTableView.reloadData()
     }
     
     //Register TableView Cell
@@ -47,20 +60,22 @@ class ProductListViewController: BaseViewController {
     
     //set subscribers
     private func addSubscribers(){
-        viewModel.result = { [weak self] (state) in
-            switch state {
-            case .loading:
-                self?.handleRefreshControl(true)
-            case .failure(let error):
-                self?.handleRefreshControl(false)
-                self?.showAlert(message: error)
-            case .success(let produts):
-                self?.handleRefreshControl(false)
-                self?.products = produts
-            default:
-                break
-            }
-        }
+        viewModel.$result.receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] (result) in
+                guard let strongSelf = self else { return }
+                switch result{
+                case .idle:
+                    break
+                case .loading:
+                    strongSelf.handleRefreshControl(true)
+                case .success(let produts):
+                    strongSelf.handleRefreshControl(false)
+                    strongSelf.products = produts
+                case .failure(let error):
+                    strongSelf.handleRefreshControl(false)
+                    strongSelf.showAlert(title: "Error", message: error)
+                }
+            }).store(in: &observers)
     }
     
     @objc private func handleRefresher() {
@@ -81,7 +96,7 @@ class ProductListViewController: BaseViewController {
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.delegate = self
         searchController.searchBar.tintColor = .white
-        searchController.searchBar.barTintColor = .black
+        searchController.searchBar.barTintColor = ThemeManager.shared.currentTheme.darkRedColor
         searchController.searchBar.searchTextField.backgroundColor = .white
         searchController.searchBar.searchTextField.tintColor = .black
         searchController.searchBar.searchTextField.textColor = .black
@@ -103,10 +118,12 @@ extension ProductListViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cell: ProductTableViewCell.self, for: indexPath)
+        cell.setupColors()
         cell.setData(product: products[indexPath.row])
         cell.didAddToCartPressed = { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.viewModel.addProductToCart(product: strongSelf.products[indexPath.row])
+            strongSelf.showAlert(title: "Congratulations", message: "\(strongSelf.products[indexPath.row].name) added to cart successfully")
         }
         return cell
     }

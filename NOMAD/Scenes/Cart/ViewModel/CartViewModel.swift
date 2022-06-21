@@ -6,22 +6,24 @@
 //
 
 import Foundation
+import Combine
 
 enum CartState{
+    case idle
     case empty
     case success([Product])
 }
 
 class CartViewModel{
     
-    var result: ((_ state: CartState) ->())?
+    @Published var result: CartState = .empty
     
     func fetchData(){
         if let products = CoreDataManager.shared.getCartItems().0 , !products.isEmpty{
-            result?(.success(products))
+            result = .success(products)
         }
         else{
-            result?(.empty)
+            result = .empty
         }
     }
     
@@ -32,6 +34,15 @@ class CartViewModel{
     
     func deleteProduct(product: Product){
         CoreDataManager.shared.removeProduct(product: product)
+        fetchData()
+    }
+    
+    func didChangeProductQuantity(product: Product,isPlus: Bool){
+        if product.quantity == 1 , !isPlus {
+            deleteProduct(product: product)
+            return
+        }
+        CoreDataManager.shared.editCartItem(product: product, isPlus: isPlus)
         fetchData()
     }
 }

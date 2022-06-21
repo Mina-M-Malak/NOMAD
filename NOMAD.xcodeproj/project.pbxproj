@@ -31,6 +31,11 @@
 		A29627D3285BDC36009014E5 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29627D1285BDC36009014E5 /* ProductTableViewCell.swift */; };
 		A29627D4285BDC36009014E5 /* ProductTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A29627D2285BDC36009014E5 /* ProductTableViewCell.xib */; };
 		A29627D7285BDF7A009014E5 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A29627D6285BDF7A009014E5 /* UITableView+Extensions.swift */; };
+		A2DE301A2861E75E00B2A425 /* DayTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE30192861E75E00B2A425 /* DayTheme.swift */; };
+		A2DE301D2861E78900B2A425 /* NightTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE301C2861E78900B2A425 /* NightTheme.swift */; };
+		A2DE30202861E79200B2A425 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE301F2861E79200B2A425 /* Theme.swift */; };
+		A2DE30232861E79A00B2A425 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE30222861E79A00B2A425 /* ThemeManager.swift */; };
+		A2DE30262861E7EC00B2A425 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DE30252861E7EC00B2A425 /* UIColor+hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +67,11 @@
 		A29627D1285BDC36009014E5 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		A29627D2285BDC36009014E5 /* ProductTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductTableViewCell.xib; sourceTree = "<group>"; };
 		A29627D6285BDF7A009014E5 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		A2DE30192861E75E00B2A425 /* DayTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTheme.swift; sourceTree = "<group>"; };
+		A2DE301C2861E78900B2A425 /* NightTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightTheme.swift; sourceTree = "<group>"; };
+		A2DE301F2861E79200B2A425 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A2DE30222861E79A00B2A425 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		A2DE30252861E7EC00B2A425 /* UIColor+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +152,7 @@
 				A29627A0285BCAA2009014E5 /* App Delegate */,
 				A29627AF285BCD7F009014E5 /* CoreData */,
 				A29627AC285BCD3B009014E5 /* Extensions */,
+				A2DE30182861E74800B2A425 /* Theme */,
 				A29627AE285BCD59009014E5 /* Network */,
 				A29627AB285BCD20009014E5 /* Base */,
 				A29627A4285BCB92009014E5 /* Storyboard */,
@@ -192,6 +203,7 @@
 				A29627D6285BDF7A009014E5 /* UITableView+Extensions.swift */,
 				A23788EA285BE96900B06F7A /* UIViewController+Extensions.swift */,
 				A23788ED285BEA6600B06F7A /* UIView+Extensions.swift */,
+				A2DE30252861E7EC00B2A425 /* UIColor+hex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,6 +280,17 @@
 				A29627CB285BD22F009014E5 /* ProductListViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		A2DE30182861E74800B2A425 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				A2DE30192861E75E00B2A425 /* DayTheme.swift */,
+				A2DE301C2861E78900B2A425 /* NightTheme.swift */,
+				A2DE301F2861E79200B2A425 /* Theme.swift */,
+				A2DE30222861E79A00B2A425 /* ThemeManager.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,19 +408,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2DE30232861E79A00B2A425 /* ThemeManager.swift in Sources */,
 				A29627BE285BCE5D009014E5 /* Result.swift in Sources */,
 				A296278A285BB3E6009014E5 /* BaseViewController.swift in Sources */,
 				A29627CC285BD22F009014E5 /* ProductListViewController.swift in Sources */,
 				A2378909285BFE4400B06F7A /* CartViewModel.swift in Sources */,
 				A2962790285BB3E6009014E5 /* NOMAD.xcdatamodeld in Sources */,
 				A23788F6285BF15500B06F7A /* CoreDataManager.swift in Sources */,
+				A2DE301A2861E75E00B2A425 /* DayTheme.swift in Sources */,
 				A29627BB285BCE3A009014E5 /* Endpoint.swift in Sources */,
+				A2DE30262861E7EC00B2A425 /* UIColor+hex.swift in Sources */,
 				A29627D3285BDC36009014E5 /* ProductTableViewCell.swift in Sources */,
 				A23788EE285BEA6600B06F7A /* UIView+Extensions.swift in Sources */,
 				A29627CF285BD2FE009014E5 /* Product.swift in Sources */,
+				A2DE301D2861E78900B2A425 /* NightTheme.swift in Sources */,
 				A23788EB285BE96900B06F7A /* UIViewController+Extensions.swift in Sources */,
 				A2962786285BB3E6009014E5 /* AppDelegate.swift in Sources */,
 				A29627D7285BDF7A009014E5 /* UITableView+Extensions.swift in Sources */,
+				A2DE30202861E79200B2A425 /* Theme.swift in Sources */,
 				A29627B2285BCDD0009014E5 /* APIError.swift in Sources */,
 				A23788E8285BE74200B06F7A /* ProductListViewModel.swift in Sources */,
 				A29627B5285BCDF0009014E5 /* APIRoute.swift in Sources */,

@@ -17,28 +17,28 @@ enum ProductListState{
 class ProductListViewModel{
     
     private var products: [Product] = []
-    var result: ((_ state: ProductListState) ->())?
+    @Published var result: ProductListState = .idle
     
     func fetchData(){
-        result?(.loading)
+        result = .loading
         APIRoute.shared.fetch(with: .getProductList, model: [String: Product].self) { [weak self] (response) in
             switch response{
             case .success(let result):
-                self?.result?(.success(Array(result.values)))
+                self?.result = .success(Array(result.values))
                 self?.products = Array(result.values)
             case .failure(let error):
-                self?.result?(.failure(error.localizedDescription))
+                self?.result = .failure(error.localizedDescription)
             }
         }
     }
     
     func filterData(searchText: String) {
         guard !searchText.trimmingCharacters(in: .whitespaces).isEmpty else {
-            result?(.success(products))
+            result = .success(products)
             return
         }
         let customProducts = products.filter({$0.name.lowercased().contains(searchText.lowercased()) || $0.description.lowercased().contains(searchText.lowercased())})
-        result?(.success(customProducts))
+        result = .success(customProducts)
     }
     
     func addProductToCart(product: Product){

@@ -91,10 +91,15 @@ class CoreDataManager{
     }
     
     //MARK:- Edit Item
-    private func editCartItem(product: Product) -> Bool{
+    func editCartItem(product: Product,isPlus: Bool = true) -> Bool{
         let products = getCartItems().1
         guard let item = products?.first(where: {$0.id == product.id}) else { return false }
-        item.quantity += 1
+        if isPlus{
+            item.quantity += 1
+        }
+        else{
+            item.quantity -= 1
+        }
         saveContext()
         return true
     }

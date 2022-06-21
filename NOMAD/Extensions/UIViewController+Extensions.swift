@@ -29,7 +29,7 @@ extension UIViewController{
                 }
             }
         }))
-        alert.view.tintColor = .black
+        alert.view.tintColor = ThemeManager.shared.currentTheme.primaryColor
         self.present(alert, animated: true, completion: nil)
     }
 }

@@ -6,15 +6,18 @@
 //
 
 import UIKit
+import Combine
 
 class CartViewController: BaseViewController {
     
     @IBOutlet weak var cartTableView: UITableView!
     
+    private var observers: [AnyCancellable] = []
     private var viewModel = CartViewModel()
     private var products: [Product] = []{
         didSet{
             cartTableView.reloadData()
+            cartTableView.tableFooterView = tableViewFooter()
         }
     }
     
@@ -27,8 +30,10 @@ class CartViewController: BaseViewController {
     
     //Setup View UI
     override func setupUI(){
+        super.setupUI()
+        
         title = "Cart"
-        cartTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: cartTableView.frame.size.width, height: 1))
+        cartTableView.tableFooterView = tableViewFooter()
         cartTableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0)
     }
     
@@ -37,18 +42,44 @@ class CartViewController: BaseViewController {
         cartTableView.register(nib: ProductTableViewCell.self)
     }
     
-    //set subscribers
-    private func addSubscribers(){
-        viewModel.result = { [weak self] (state) in
-            switch state {
-            case .empty:
-                self?.products = []
-            case .success(let produts):
-                self?.products = produts
-            }
-        }
+    //setup colors
+    override func setupViewColors(theme: Theme) {
+        super.setupViewColors(theme: theme)
+        view.backgroundColor = theme.background
+        cartTableView.reloadData()
+        cartTableView.tableFooterView = tableViewFooter()
+        cartTableView.separatorColor = theme.primaryColor
     }
     
+    private func tableViewFooter() -> UIView{
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: cartTableView.frame.size.width, height: 50))
+        let label = UILabel(frame: CGRect(x: 16, y: 8, width: cartTableView.frame.size.width - 32, height: 30))
+        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.textColor = ThemeManager.shared.currentTheme.primaryColor
+        label.textAlignment = .center
+        label.text = "Total: " + "\(viewModel.getProductsPrice())" + " " + "EGP"
+        footerView.addSubview(label)
+        footerView.backgroundColor = ThemeManager.shared.currentTheme.background
+        return footerView
+    }
+    
+    //set subscribers
+    private func addSubscribers(){
+        viewModel.$result.receive(on: DispatchQueue.main)
+            .sink(receiveValue: { [weak self] (result) in
+                guard let strongSelf = self else { return }
+                switch result{
+                case .empty:
+                    strongSelf.products = []
+                case .success(let products):
+                    strongSelf.products = products
+                case .idle:
+                    break
+                }
+            }).store(in: &observers)
+    }
+    
+    //Delete Item
     private func deleteitem(product: Product,indexPath: IndexPath){
         cartTableView.performBatchUpdates {
             products.remove(at: indexPath.row)
@@ -73,24 +104,13 @@ extension CartViewController: UITableViewDataSource , UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(cell: ProductTableViewCell.self, for: indexPath)
-        cell.setData(product: products[indexPath.row],isQuantityLabelHidden: false,isAddtoCartButtonHidden: true)
+        cell.setupColors()
+        cell.setData(product: products[indexPath.row],isProductCart: true)
+        cell.didChangeQuantity = { [weak self] (isPlus) in
+            guard let strongSelf = self else { return }
+            strongSelf.viewModel.didChangeProductQuantity(product: strongSelf.products[indexPath.row],isPlus: isPlus)
+        }
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 50))
-        let label = UILabel(frame: CGRect(x: 16, y: 16, width: tableView.frame.size.width - 32, height: 30))
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
-        label.textColor = .black
-        label.textAlignment = .center
-        label.text = "Total: " + "\(viewModel.getProductsPrice())" + " " + "EGP"
-        footerView.addSubview(label)
-        footerView.backgroundColor = .white
-        return footerView
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
